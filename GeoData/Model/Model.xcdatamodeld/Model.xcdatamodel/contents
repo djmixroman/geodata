@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="GeoFeature" representedClassName="GeoFeature" syncable="YES">
+    <entity name="CDFeature" representedClassName="CDFeature" syncable="YES">
         <attribute name="alert" optional="YES" attributeType="String"/>
         <attribute name="cdi" optional="YES" attributeType="String"/>
         <attribute name="code" optional="YES" attributeType="String"/>
@@ -27,16 +27,16 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="types" optional="YES" attributeType="String"/>
         <attribute name="tz" optional="YES" attributeType="String"/>
-        <attribute name="updated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
-        <relationship name="geometry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geometry"/>
+        <relationship name="geometry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDGeometry"/>
     </entity>
-    <entity name="Geometry" representedClassName="Geometry" syncable="YES">
+    <entity name="CDGeometry" representedClassName="CDGeometry" syncable="YES">
         <attribute name="coordinates" optional="YES" attributeType="Transformable"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="GeoFeature" positionX="-63" positionY="-18" width="128" height="478"/>
-        <element name="Geometry" positionX="-54" positionY="144" width="128" height="73"/>
+        <element name="CDFeature" positionX="-63" positionY="-18" width="128" height="478"/>
+        <element name="CDGeometry" positionX="-54" positionY="144" width="128" height="73"/>
     </elements>
 </model>
