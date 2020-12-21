@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		839DE79D2591033F006C741B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 839DE79B2591033F006C741B /* Model.xcdatamodeld */; };
+		839DE7A325910393006C741B /* CDFeature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DE79F25910393006C741B /* CDFeature+CoreDataClass.swift */; };
+		839DE7A425910393006C741B /* CDFeature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DE7A025910393006C741B /* CDFeature+CoreDataProperties.swift */; };
+		839DE7A525910393006C741B /* CDGeometry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DE7A125910393006C741B /* CDGeometry+CoreDataClass.swift */; };
+		839DE7A625910393006C741B /* CDGeometry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DE7A225910393006C741B /* CDGeometry+CoreDataProperties.swift */; };
 		8FD2114B2590F2AB00BB7D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2114A2590F2AB00BB7D40 /* AppDelegate.swift */; };
 		8FD2114D2590F2AB00BB7D40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2114C2590F2AB00BB7D40 /* SceneDelegate.swift */; };
 		8FD2114F2590F2AB00BB7D40 /* EarthquakesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2114E2590F2AB00BB7D40 /* EarthquakesViewController.swift */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		839DE79C2591033F006C741B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		839DE79F25910393006C741B /* CDFeature+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFeature+CoreDataClass.swift"; sourceTree = "<group>"; };
+		839DE7A025910393006C741B /* CDFeature+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFeature+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		839DE7A125910393006C741B /* CDGeometry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDGeometry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		839DE7A225910393006C741B /* CDGeometry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDGeometry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8FD211472590F2AB00BB7D40 /* GeoData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD2114A2590F2AB00BB7D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FD2114C2590F2AB00BB7D40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +145,10 @@
 			children = (
 				839DE79B2591033F006C741B /* Model.xcdatamodeld */,
 				8FD211652590F88100BB7D40 /* Model.swift */,
+				839DE79F25910393006C741B /* CDFeature+CoreDataClass.swift */,
+				839DE7A025910393006C741B /* CDFeature+CoreDataProperties.swift */,
+				839DE7A125910393006C741B /* CDGeometry+CoreDataClass.swift */,
+				839DE7A225910393006C741B /* CDGeometry+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,13 +253,17 @@
 				8FD2114B2590F2AB00BB7D40 /* AppDelegate.swift in Sources */,
 				8FD211832591006400BB7D40 /* EarthquakeCell.swift in Sources */,
 				8FD2117B2590FF8A00BB7D40 /* EarthquakesDDM.swift in Sources */,
+				839DE7A525910393006C741B /* CDGeometry+CoreDataClass.swift in Sources */,
+				839DE7A425910393006C741B /* CDFeature+CoreDataProperties.swift in Sources */,
 				8FD2117E2590FFD600BB7D40 /* EarthquakesViewModel.swift in Sources */,
+				839DE7A625910393006C741B /* CDGeometry+CoreDataProperties.swift in Sources */,
 				8FD211602590F5DF00BB7D40 /* EarthquakesService.swift in Sources */,
 				8FD211662590F88100BB7D40 /* Model.swift in Sources */,
 				8FD2114D2590F2AB00BB7D40 /* SceneDelegate.swift in Sources */,
 				8FD211692590FBE800BB7D40 /* EarthquakesInteractor.swift in Sources */,
 				839DE79D2591033F006C741B /* Model.xcdatamodeld in Sources */,
 				8FD211632590F75500BB7D40 /* NetworkProvider.swift in Sources */,
+				839DE7A325910393006C741B /* CDFeature+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
