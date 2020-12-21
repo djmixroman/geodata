@@ -11,5 +11,6 @@ import CoreData
 
 @objc(CDFeature)
 public class CDFeature: NSManagedObject {
-
+    func configure(with feature: Feature) {
+    }
 }
