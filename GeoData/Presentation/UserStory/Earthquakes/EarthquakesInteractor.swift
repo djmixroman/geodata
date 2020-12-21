@@ -50,6 +50,17 @@ final class EarthquakesInteractor {
                 }
                 
                 if let earthquake = earthquake {
+                    let context = persistentContainer.newBackgroundContext()
+
+                    context.perform {
+                        let managedObjects = earthquake.features.map { feature in
+                            let object = CDFeature(context: context)
+                            object.configure(with: feature)
+                        }
+
+                        try? context.save()
+                    }
+
                     print(earthquake)
                 }
             }
