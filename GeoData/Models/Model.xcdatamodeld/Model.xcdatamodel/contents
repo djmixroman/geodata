@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GeoFeature" representedClassName="GeoFeature" syncable="YES">
+        <attribute name="alert" optional="YES" attributeType="String"/>
+        <attribute name="cdi" optional="YES" attributeType="String"/>
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="detail" optional="YES" attributeType="URI"/>
+        <attribute name="dmin" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="felt" optional="YES" attributeType="String"/>
+        <attribute name="gap" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="ids" optional="YES" attributeType="String"/>
+        <attribute name="mag" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="magType" optional="YES" attributeType="String"/>
+        <attribute name="mmi" optional="YES" attributeType="String"/>
+        <attribute name="net" optional="YES" attributeType="String"/>
+        <attribute name="nst" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="place" optional="YES" attributeType="String"/>
+        <attribute name="propertiesType" optional="YES" attributeType="String"/>
+        <attribute name="rms" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sig" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sources" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="tsunami" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="types" optional="YES" attributeType="String"/>
+        <attribute name="tz" optional="YES" attributeType="String"/>
+        <attribute name="updated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="geometry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geometry"/>
+    </entity>
+    <entity name="Geometry" representedClassName="Geometry" syncable="YES">
+        <attribute name="coordinates" optional="YES" attributeType="Transformable"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="GeoFeature" positionX="-63" positionY="-18" width="128" height="478"/>
+        <element name="Geometry" positionX="-54" positionY="144" width="128" height="73"/>
+    </elements>
+</model>
