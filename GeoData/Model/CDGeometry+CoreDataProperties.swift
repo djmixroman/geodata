@@ -16,7 +16,7 @@ extension CDGeometry {
         return NSFetchRequest<CDGeometry>(entityName: "CDGeometry")
     }
 
-    @NSManaged public var coordinates: NSObject?
+    @NSManaged public var coordinates: Date?
     @NSManaged public var type: String?
 
 }

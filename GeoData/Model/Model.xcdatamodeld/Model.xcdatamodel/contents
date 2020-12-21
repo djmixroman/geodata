@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDEarthquake" representedClassName="CDEarthquake" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="generated" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="features" toMany="YES" deletionRule="Nullify" destinationEntity="CDFeature" inverseName="earthquake" inverseEntity="CDFeature"/>
+    </entity>
     <entity name="CDFeature" representedClassName="CDFeature" syncable="YES">
         <attribute name="alert" optional="YES" attributeType="String"/>
         <attribute name="cdi" optional="YES" attributeType="String"/>
@@ -7,36 +14,38 @@
         <attribute name="detail" optional="YES" attributeType="URI"/>
         <attribute name="dmin" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="felt" optional="YES" attributeType="String"/>
-        <attribute name="gap" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="id" attributeType="String"/>
+        <attribute name="gap" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="ids" optional="YES" attributeType="String"/>
         <attribute name="mag" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="magType" optional="YES" attributeType="String"/>
         <attribute name="mmi" optional="YES" attributeType="String"/>
         <attribute name="net" optional="YES" attributeType="String"/>
-        <attribute name="nst" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nst" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="place" optional="YES" attributeType="String"/>
         <attribute name="propertiesType" optional="YES" attributeType="String"/>
         <attribute name="rms" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="sig" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sig" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="sources" optional="YES" attributeType="String"/>
         <attribute name="status" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="time" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="tsunami" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tsunami" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="types" optional="YES" attributeType="String"/>
         <attribute name="tz" optional="YES" attributeType="String"/>
-        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="earthquake" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDEarthquake" inverseName="features" inverseEntity="CDEarthquake"/>
         <relationship name="geometry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDGeometry"/>
     </entity>
     <entity name="CDGeometry" representedClassName="CDGeometry" syncable="YES">
-        <attribute name="coordinates" optional="YES" attributeType="Transformable"/>
+        <attribute name="coordinates" optional="YES" attributeType="Date"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CDFeature" positionX="-63" positionY="-18" width="128" height="478"/>
+        <element name="CDFeature" positionX="-63" positionY="-18" width="128" height="493"/>
         <element name="CDGeometry" positionX="-54" positionY="144" width="128" height="73"/>
+        <element name="CDEarthquake" positionX="-36" positionY="153" width="128" height="118"/>
     </elements>
 </model>

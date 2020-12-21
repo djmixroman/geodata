@@ -6,24 +6,68 @@
 //
 
 import Foundation
+import CoreData
 
 protocol EarthquakesServiceProtocol {
     
-    func fetchEarthquakesData(completion: @escaping (Earthquake?, Error?) -> Void)
+    func fetchEarthquakesData(
+        networkCompletion: @escaping (Earthquake?, Error?) -> Void, // optional calling
+        coreDataCompletion: @escaping (CDEarthquake?, Error?) -> Void
+    )
+
 }
 
 final class EarthquakesService: EarthquakesServiceProtocol {
     
     
     private let networkProviderProtocol: NetworkProviderProtocol
+
+    private let coreDataProviderProtocol: CoreDataProviderProtocol
     
     
-    init(networkProviderProtocol: NetworkProviderProtocol) {
+    init(networkProviderProtocol: NetworkProviderProtocol,
+         coreDataProviderProtocol: CoreDataProviderProtocol) {
         self.networkProviderProtocol = networkProviderProtocol
+        self.coreDataProviderProtocol = coreDataProviderProtocol
+    }
+
+    func fetchEarthquakesData(
+        networkCompletion: @escaping (Earthquake?, Error?) -> Void, // optional calling
+        coreDataCompletion: @escaping (CDEarthquake?, Error?) -> Void
+    ) {
+        let dispatchGroup = DispatchGroup()
+
+        var cdGenerated: Int?
+        dispatchGroup.enter()
+        coreDataProviderProtocol.fetchEarthquake { (cdEarthquake, error) in
+            coreDataCompletion(cdEarthquake, error)
+            cdEarthquake.map { cdGenerated = Int($0.generated) }
+            dispatchGroup.leave()
+        }
+
+        var networkEarthquake: Earthquake?
+        dispatchGroup.enter()
+        networkFetchEarthquakesData { (earthquake, error) in
+            networkCompletion(earthquake, error)
+            networkEarthquake = earthquake
+            dispatchGroup.leave()
+        }
+
+        // save network data to core data if needed
+        dispatchGroup.notify(queue: .main) {
+            guard let earthquake = networkEarthquake else { return }
+
+            if let cdGenerated = cdGenerated {
+                if earthquake.metadata.generated > cdGenerated {
+                    self.coreDataProviderProtocol.save(earthquake: earthquake)
+                }
+            } else {
+                self.coreDataProviderProtocol.save(earthquake: earthquake)
+            }
+        }
     }
     
-    
-    func fetchEarthquakesData(completion: @escaping (Earthquake?, Error?) -> Void) {
+    private func networkFetchEarthquakesData(completion: @escaping (Earthquake?, Error?) -> Void) {
         networkProviderProtocol.request(by: .earthquakesFeed) { data, error in
             if let error = error {
                 completion(nil, error)

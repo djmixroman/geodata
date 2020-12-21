@@ -22,29 +22,30 @@ extension CDFeature {
     @NSManaged public var detail: URL?
     @NSManaged public var dmin: Double
     @NSManaged public var felt: String?
-    @NSManaged public var gap: Int32
+    @NSManaged public var gap: Int64
     @NSManaged public var id: String?
     @NSManaged public var ids: String?
     @NSManaged public var mag: Double
     @NSManaged public var magType: String?
     @NSManaged public var mmi: String?
     @NSManaged public var net: String?
-    @NSManaged public var nst: Int32
+    @NSManaged public var nst: Int64
     @NSManaged public var place: String?
     @NSManaged public var propertiesType: String?
     @NSManaged public var rms: Double
-    @NSManaged public var sig: Int32
+    @NSManaged public var sig: Int64
     @NSManaged public var sources: String?
     @NSManaged public var status: String?
-    @NSManaged public var time: Date?
+    @NSManaged public var time: Int64
     @NSManaged public var title: String?
-    @NSManaged public var tsunami: Int32
+    @NSManaged public var tsunami: Int64
     @NSManaged public var type: String?
     @NSManaged public var types: String?
     @NSManaged public var tz: String?
-    @NSManaged public var updatedAt: Date?
+    @NSManaged public var updatedAt: Int64
     @NSManaged public var url: URL?
     @NSManaged public var geometry: CDGeometry?
+    @NSManaged public var earthquake: CDEarthquake?
 
 }
 

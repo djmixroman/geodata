@@ -12,8 +12,11 @@ enum EarthquakesInteractorBuilder {
     
     static func build() -> EarthquakesInteractor {
         let networkProvider = NetworkProvider()
+
+        let coreDataProviderProtocol = CoreDataProvider()
         
-        let earthquakesService = EarthquakesService(networkProviderProtocol: networkProvider)
+        let earthquakesService = EarthquakesService(networkProviderProtocol: networkProvider,
+                                                    coreDataProviderProtocol: coreDataProviderProtocol)
         
         let interactor = EarthquakesInteractor(earthquakesService: earthquakesService)
         
@@ -47,32 +50,36 @@ final class EarthquakesInteractor {
     
     func loadData() {
         queue.async {
-            self.earthquakesService.fetchEarthquakesData { earthquake, error in
-                if let error = error {
-                    print(error)
-                }
-                
-                if let earthquake = earthquake {
-                    let context = persistentContainer.newBackgroundContext()
+            self.earthquakesService.fetchEarthquakesData(
+                networkCompletion: { earthquake, error in
+                    if let error = error {
+                        print(error)
+                    }
 
-                    context.perform {
-                        let managedObjects = earthquake.features.map { feature in
-                            let object = CDFeature(context: context)
-                            object.configure(with: feature)
+                    if let earthquake = earthquake {
+                        let viewModels = earthquake.features.compactMap { EarthquakesViewModel(feature: $0) }
+
+                        DispatchQueue.main.async {
+                            self.viewController?.configure(with: viewModels)
+                            print("loaded from Network")
                         }
-
-                        try? context.save()
+                    }
+                },
+                coreDataCompletion: { cdEarthquake, error in
+                    if let error = error {
+                        print("Failed to fetch: \(error.localizedDescription)")
                     }
 
-                    print(earthquake)
-
-                    let viewModels = earthquake.features.compactMap { EarthquakesViewModel(feature: $0) }
-                    
                     DispatchQueue.main.async {
-                        self.viewController?.configure(with: viewModels)
+                        if let cdEarthquake = cdEarthquake {
+                            let viewModels = cdEarthquake.sortedFeatures.compactMap { EarthquakesViewModel(cdFeature: $0) }
+
+                            self.viewController?.configure(with: viewModels)
+                            print("loaded from Core Data")
+                        }
                     }
                 }
-            }
+            )
         }
     }
     

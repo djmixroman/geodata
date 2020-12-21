@@ -21,6 +21,12 @@ struct EarthquakesViewModel {
                   date: Date(timeIntervalSince1970: TimeInterval(feature.properties.time) / 1000),
                   magnitude: feature.properties.mag ?? 0.0)
     }
+
+    init(cdFeature: CDFeature) {
+        self.init(placeName: cdFeature.place ?? "",
+                  date: Date(timeIntervalSince1970: TimeInterval(cdFeature.time) / 1000),
+                  magnitude: cdFeature.mag)
+    }
     
     init(placeName: String,
          date: Date,
