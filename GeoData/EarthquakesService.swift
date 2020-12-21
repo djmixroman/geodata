@@ -7,11 +7,16 @@
 
 import Foundation
 
+protocol EarthquakesServiceProtocol {
+    
+    func fetchEarthquakesData(completion: @escaping (Earthquake?, Error?) -> Void)
+}
 
-final class EarthquakesService {
+final class EarthquakesService: EarthquakesServiceProtocol {
     
     
     private let networkProviderProtocol: NetworkProviderProtocol
+    
     
     init(networkProviderProtocol: NetworkProviderProtocol) {
         self.networkProviderProtocol = networkProviderProtocol
