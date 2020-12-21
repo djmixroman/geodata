@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 let persistentContainer: NSPersistentContainer = {
-  let container = NSPersistentContainer(name: "Geo")
+  let container = NSPersistentContainer(name: "Model")
 
   container.loadPersistentStores { description, error in
     if let error = error {
