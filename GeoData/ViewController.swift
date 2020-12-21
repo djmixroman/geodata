@@ -7,10 +7,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController {
+    
+    let networkProvider = NetworkProvider()
+    
+    var earthquakesService: EarthquakesService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        earthquakesService = EarthquakesService(networkProviderProtocol: networkProvider)
+        
+        earthquakesService.fetchEarthquakesData { earthquake, error in
+            if let error = error {
+                print(error)
+            }
+            
+            if let earthquake = earthquake {
+                print(earthquake)
+            }
+            
+        }
         // Do any additional setup after loading the view.
     }
 
