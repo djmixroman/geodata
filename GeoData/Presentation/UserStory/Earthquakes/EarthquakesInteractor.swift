@@ -24,6 +24,9 @@ enum EarthquakesInteractorBuilder {
 final class EarthquakesInteractor {
     
     
+    weak var viewController: EarthquakesViewController?
+    
+    
     // MARK: - Private Properties
     
     private let earthquakesService: EarthquakesServiceProtocol
@@ -50,7 +53,11 @@ final class EarthquakesInteractor {
                 }
                 
                 if let earthquake = earthquake {
-                    print(earthquake)
+                    let viewModels = earthquake.features.compactMap { EarthquakesViewModel(feature: $0) }
+                    
+                    DispatchQueue.main.async {
+                        self.viewController?.configure(with: viewModels)
+                    }
                 }
             }
         }
