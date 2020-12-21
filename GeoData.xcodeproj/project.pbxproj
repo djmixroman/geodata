@@ -64,19 +64,83 @@
 		8FD211492590F2AB00BB7D40 /* GeoData */ = {
 			isa = PBXGroup;
 			children = (
-				8FD2114A2590F2AB00BB7D40 /* AppDelegate.swift */,
-				8FD2114C2590F2AB00BB7D40 /* SceneDelegate.swift */,
-				8FD2114E2590F2AB00BB7D40 /* EarthquakesViewController.swift */,
-				8FD211682590FBE800BB7D40 /* EarthquakesInteractor.swift */,
-				8FD211652590F88100BB7D40 /* Model.swift */,
-				8FD2115F2590F5DF00BB7D40 /* EarthquakesService.swift */,
-				8FD211622590F75500BB7D40 /* NetworkProvider.swift */,
+				8FD211762590FE4F00BB7D40 /* Model */,
+				8FD211752590FE3B00BB7D40 /* BusinessLogic */,
+				8FD211722590FE1F00BB7D40 /* Presentation */,
+				8FD211702590FE1A00BB7D40 /* Main */,
 				8FD211502590F2AB00BB7D40 /* Main.storyboard */,
 				8FD211532590F2AD00BB7D40 /* Assets.xcassets */,
 				8FD211552590F2AD00BB7D40 /* LaunchScreen.storyboard */,
 				8FD211582590F2AD00BB7D40 /* Info.plist */,
 			);
 			path = GeoData;
+			sourceTree = "<group>";
+		};
+		8FD2116E2590FE0000BB7D40 /* Earthquakes */ = {
+			isa = PBXGroup;
+			children = (
+				8FD2114E2590F2AB00BB7D40 /* EarthquakesViewController.swift */,
+				8FD211682590FBE800BB7D40 /* EarthquakesInteractor.swift */,
+			);
+			path = Earthquakes;
+			sourceTree = "<group>";
+		};
+		8FD211702590FE1A00BB7D40 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8FD2114A2590F2AB00BB7D40 /* AppDelegate.swift */,
+				8FD2114C2590F2AB00BB7D40 /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8FD211722590FE1F00BB7D40 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8FD211732590FE2900BB7D40 /* UserStory */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8FD211732590FE2900BB7D40 /* UserStory */ = {
+			isa = PBXGroup;
+			children = (
+				8FD2116E2590FE0000BB7D40 /* Earthquakes */,
+			);
+			path = UserStory;
+			sourceTree = "<group>";
+		};
+		8FD211752590FE3B00BB7D40 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				8FD211782590FE6200BB7D40 /* Service */,
+				8FD211772590FE5A00BB7D40 /* Provider */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		8FD211762590FE4F00BB7D40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FD211652590F88100BB7D40 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FD211772590FE5A00BB7D40 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				8FD211622590F75500BB7D40 /* NetworkProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		8FD211782590FE6200BB7D40 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8FD2115F2590F5DF00BB7D40 /* EarthquakesService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
