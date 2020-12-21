@@ -44,6 +44,8 @@ class EarthquakesViewController: UIViewController {
         
         tableView.register(UINib(nibName: EarthquakeCell.className, bundle: nil),
                            forCellReuseIdentifier: EarthquakeCell.reuseIdentifier)
+        
+        tableView.allowsSelection = false
     }
 }
 
