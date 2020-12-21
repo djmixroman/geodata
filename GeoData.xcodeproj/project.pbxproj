@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		839DE79D2591033F006C741B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 839DE79B2591033F006C741B /* Model.xcdatamodeld */; };
 		8FD2114B2590F2AB00BB7D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2114A2590F2AB00BB7D40 /* AppDelegate.swift */; };
 		8FD2114D2590F2AB00BB7D40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2114C2590F2AB00BB7D40 /* SceneDelegate.swift */; };
 		8FD2114F2590F2AB00BB7D40 /* EarthquakesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2114E2590F2AB00BB7D40 /* EarthquakesViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		839DE79C2591033F006C741B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8FD211472590F2AB00BB7D40 /* GeoData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD2114A2590F2AB00BB7D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FD2114C2590F2AB00BB7D40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		8FD211762590FE4F00BB7D40 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				839DE79B2591033F006C741B /* Model.xcdatamodeld */,
 				8FD211652590F88100BB7D40 /* Model.swift */,
 			);
 			path = Model;
@@ -243,6 +246,7 @@
 				8FD211662590F88100BB7D40 /* Model.swift in Sources */,
 				8FD2114D2590F2AB00BB7D40 /* SceneDelegate.swift in Sources */,
 				8FD211692590FBE800BB7D40 /* EarthquakesInteractor.swift in Sources */,
+				839DE79D2591033F006C741B /* Model.xcdatamodeld in Sources */,
 				8FD211632590F75500BB7D40 /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +449,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		839DE79B2591033F006C741B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				839DE79C2591033F006C741B /* Model.xcdatamodel */,
+			);
+			currentVersion = 839DE79C2591033F006C741B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8FD2113F2590F2AB00BB7D40 /* Project object */;
 }
