@@ -17,6 +17,10 @@
 		8FD211632590F75500BB7D40 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD211622590F75500BB7D40 /* NetworkProvider.swift */; };
 		8FD211662590F88100BB7D40 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD211652590F88100BB7D40 /* Model.swift */; };
 		8FD211692590FBE800BB7D40 /* EarthquakesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD211682590FBE800BB7D40 /* EarthquakesInteractor.swift */; };
+		8FD2117B2590FF8A00BB7D40 /* EarthquakesDDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2117A2590FF8A00BB7D40 /* EarthquakesDDM.swift */; };
+		8FD2117E2590FFD600BB7D40 /* EarthquakesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD2117D2590FFD600BB7D40 /* EarthquakesViewModel.swift */; };
+		8FD211832591006400BB7D40 /* EarthquakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD211812591006400BB7D40 /* EarthquakeCell.swift */; };
+		8FD211842591006400BB7D40 /* EarthquakeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD211822591006400BB7D40 /* EarthquakeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		8FD211622590F75500BB7D40 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		8FD211652590F88100BB7D40 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8FD211682590FBE800BB7D40 /* EarthquakesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesInteractor.swift; sourceTree = "<group>"; };
+		8FD2117A2590FF8A00BB7D40 /* EarthquakesDDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesDDM.swift; sourceTree = "<group>"; };
+		8FD2117D2590FFD600BB7D40 /* EarthquakesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakesViewModel.swift; sourceTree = "<group>"; };
+		8FD211812591006400BB7D40 /* EarthquakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeCell.swift; sourceTree = "<group>"; };
+		8FD211822591006400BB7D40 /* EarthquakeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EarthquakeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +87,11 @@
 		8FD2116E2590FE0000BB7D40 /* Earthquakes */ = {
 			isa = PBXGroup;
 			children = (
+				8FD211802591005100BB7D40 /* Cell */,
 				8FD2114E2590F2AB00BB7D40 /* EarthquakesViewController.swift */,
+				8FD2117A2590FF8A00BB7D40 /* EarthquakesDDM.swift */,
 				8FD211682590FBE800BB7D40 /* EarthquakesInteractor.swift */,
+				8FD2117D2590FFD600BB7D40 /* EarthquakesViewModel.swift */,
 			);
 			path = Earthquakes;
 			sourceTree = "<group>";
@@ -143,6 +154,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		8FD211802591005100BB7D40 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8FD211812591006400BB7D40 /* EarthquakeCell.swift */,
+				8FD211822591006400BB7D40 /* EarthquakeCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +222,7 @@
 			files = (
 				8FD211572590F2AD00BB7D40 /* LaunchScreen.storyboard in Resources */,
 				8FD211542590F2AD00BB7D40 /* Assets.xcassets in Resources */,
+				8FD211842591006400BB7D40 /* EarthquakeCell.xib in Resources */,
 				8FD211522590F2AB00BB7D40 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +236,9 @@
 			files = (
 				8FD2114F2590F2AB00BB7D40 /* EarthquakesViewController.swift in Sources */,
 				8FD2114B2590F2AB00BB7D40 /* AppDelegate.swift in Sources */,
+				8FD211832591006400BB7D40 /* EarthquakeCell.swift in Sources */,
+				8FD2117B2590FF8A00BB7D40 /* EarthquakesDDM.swift in Sources */,
+				8FD2117E2590FFD600BB7D40 /* EarthquakesViewModel.swift in Sources */,
 				8FD211602590F5DF00BB7D40 /* EarthquakesService.swift in Sources */,
 				8FD211662590F88100BB7D40 /* Model.swift in Sources */,
 				8FD2114D2590F2AB00BB7D40 /* SceneDelegate.swift in Sources */,
