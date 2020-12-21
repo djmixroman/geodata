@@ -8,6 +8,14 @@
 import UIKit
 
 class EarthquakeCell: UITableViewCell {
+    
+    static var className: String {
+        NSStringFromClass(EarthquakeCell.self).components(separatedBy: ".").last!
+    }
+    
+    static var reuseIdentifier: String {
+        EarthquakeCell.className + "_Identifier"
+    }
 
     @IBOutlet private weak var placeLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
@@ -16,7 +24,7 @@ class EarthquakeCell: UITableViewCell {
     
     func configure(with viewModel: EarthquakesViewModel) {
         placeLabel.text = viewModel.placeName
-        magnitudeLabel.text = String(format: "%.1f", viewModel.magnitude)
+        magnitudeLabel.text = viewModel.magnitude
         dateLabel.text = viewModel.date
     }
     
