@@ -19,9 +19,9 @@ protocol NetworkProviderProtocol {
 
 final class NetworkProvider: NetworkProviderProtocol {
     
-    private let session = URLSession(configuration: .default)
-    
     func request(by url: URL, completion: @escaping (Data?, Error?) -> Void) {
+        let session = URLSession(configuration: .default)
+        
         let task = session.dataTask(with: url) { data, _, urlSessionError in
         
             guard urlSessionError == nil else {
